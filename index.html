@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기상청 지역 날씨 정보 서비스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ 기상청 지역 날씨 정보 서비스</h1>
+            <p>경상남도 지역의 실시간 날씨 정보를 확인하세요</p>
+        </header>
+
+        <div class="weather-app">
+            <div class="location-selector">
+                <label for="city-select">지역 선택:</label>
+                <select id="city-select">
+                    <option value="">지역을 선택하세요</option>
+                    <option value="창원시">창원시</option>
+                    <option value="진주시">진주시</option>
+                    <option value="통영시">통영시</option>
+                    <option value="사천시">사천시</option>
+                    <option value="김해시">김해시</option>
+                    <option value="밀양시">밀양시</option>
+                    <option value="거제시">거제시</option>
+                    <option value="양산시">양산시</option>
+                    <option value="의령군">의령군</option>
+                    <option value="함안군">함안군</option>
+                    <option value="창녕군">창녕군</option>
+                    <option value="고성군">고성군</option>
+                    <option value="남해군">남해군</option>
+                    <option value="하동군">하동군</option>
+                    <option value="산청군">산청군</option>
+                    <option value="함양군">함양군</option>
+                    <option value="거창군">거창군</option>
+                    <option value="합천군">합천군</option>
+                </select>
+                <button id="get-weather-btn">날씨 조회</button>
+            </div>
+
+            <div class="weather-info" id="weather-info">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>날씨 정보를 불러오는 중...</p>
+                </div>
+                
+                <div class="weather-display" id="weather-display" style="display: none;">
+                    <div class="current-time">
+                        <h3>🕐 현재 시간</h3>
+                        <p id="current-time"></p>
+                    </div>
+                    
+                    <div class="weather-main">
+                        <div class="temperature">
+                            <h3>🌡️ 기온</h3>
+                            <p id="temperature"></p>
+                        </div>
+                        
+                        <div class="humidity">
+                            <h3>💧 습도</h3>
+                            <p id="humidity"></p>
+                        </div>
+                        
+                        <div class="weather-status">
+                            <h3>☁️ 날씨 상태</h3>
+                            <p id="weather-status"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-info">
+                        <div class="wind">
+                            <h3>💨 바람</h3>
+                            <p id="wind"></p>
+                        </div>
+                        
+                        <div class="precipitation">
+                            <h3>🌧️ 강수확률</h3>
+                            <p id="precipitation"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-message" id="error-message" style="display: none;">
+                    <p>❌ 날씨 정보를 불러오는데 실패했습니다.</p>
+                    <p id="error-details"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
